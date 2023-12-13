@@ -1,0 +1,10 @@
+td,th{
+    text-align: center;
+
+}
+
+table{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+}
