@@ -1,0 +1,10 @@
+form {
+  letter-spacing: 1px;
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
