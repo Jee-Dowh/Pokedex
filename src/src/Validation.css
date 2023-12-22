@@ -1,0 +1,13 @@
+form {
+  letter-spacing: 1px;
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  top: 380px;
+  left: 450px;
+}
