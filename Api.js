@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Formulaire from "./Formulaire.js";
 import PhotoQuiz from "./Photo.js";
+import Correct from "./Reponse.js";
 
 class Api extends Component {
   state = {
@@ -17,7 +18,6 @@ class Api extends Component {
     pokemonSpecies: [],
     habitat: [],
     couleur: [],
-    photo: [],
   };
 
   componentDidMount() {
@@ -78,16 +78,16 @@ class Api extends Component {
     const { habitat } = this.state;
     const { photo } = this.state;
     return (
-      (
-        <Formulaire
-          tableDataContent={dataToPass}
-          pokemon={pokemon}
-          couleur={couleur}
-          habitat={habitat}
-          photo={photo}
-        />
-      ),
-      (<PhotoQuiz photo={photo} />)
+      <Formulaire
+        tableDataContent={dataToPass}
+        pokemon={pokemon}
+        couleur={couleur}
+        habitat={habitat}
+        photo={pokemon.sprites?.front_default}
+      />
+
+      // (<PhotoQuiz photo={pokemon.sprites?.front_default} />)
+      // (<PhotoQuiz photo={photo} />)
     );
   }
 }

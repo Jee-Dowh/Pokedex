@@ -38,10 +38,10 @@ const TableBody = (props) => {
   return (
     <tbody>
       <tr>
-        <td>{props.pokemon.height}</td>
+        <td>{props.pokemon.height / 10} m</td>
       </tr>
       <tr>
-        <td>{props.pokemon.weight}</td>
+        <td>{props.pokemon.weight / 10} kg</td>
       </tr>
       <tr>
         <td>
@@ -58,9 +58,6 @@ const TableBody = (props) => {
       <tr>
         <td>{props.habitat.name}</td>
       </tr>
-      <tr>
-        <td>{props.pokemon.Habitat}</td>
-      </tr>
     </tbody>
   );
 };
@@ -69,16 +66,30 @@ class Formulaire extends Component {
   render() {
     const { tableDataContent, pokemon, couleur, habitat } = this.props;
     return (
-      <table>
-        <TableHeader tableHeaderContent={tableDataContent} />
-        <TableBody
-          tableBodyContent={tableDataContent}
-          pokemon={pokemon}
-          couleur={couleur}
-          habitat={habitat}
-        />
-      </table>
+      <div>
+        <table>
+          <TableHeader tableHeaderContent={tableDataContent} />
+          <TableBody
+            tableBodyContent={tableDataContent}
+            pokemon={pokemon}
+            couleur={couleur}
+            habitat={habitat}
+          />
+        </table>
+        <img src={pokemon.sprites?.front_default} />
+      </div>
     );
+
+    //   <table>
+    //     <TableHeader tableHeaderContent={tableDataContent} />
+    //     <TableBody
+    //       tableBodyContent={tableDataContent}
+    //       pokemon={pokemon}
+    //       couleur={couleur}
+    //       habitat={habitat}
+    //     />
+    //   </table>
+    // );
   }
 }
 
