@@ -60,15 +60,19 @@ class Api extends Component {
     const { pokemon } = this.state;
     const { couleur } = this.state;
     const { habitat } = this.state;
+    const { name } = this.state;
     const { photo } = this.state;
     return (
-      <Formulaire
-        tableDataContent={dataToPass}
-        pokemon={pokemon}
-        couleur={couleur}
-        habitat={habitat}
-        photo={pokemon.sprites?.front_default}
-      />
+      <div>
+        <Formulaire
+          tableDataContent={dataToPass}
+          pokemon={pokemon}
+          couleur={couleur}
+          habitat={habitat}
+          photo={pokemon.sprites?.front_default}
+        />
+        <Validation name={pokemon.name} />
+      </div>
     );
   }
 }

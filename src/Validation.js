@@ -5,22 +5,16 @@ import { useState } from "react";
 
 const PokemonIsValid = (props) => {
   const [message, setMessage] = useState("");
+  const pokemonName = props.pokemon.name;
   const handleKeyDown = (event) => {
     console.log(event.key);
-    console.log(props.pokemon.name);
-
     if (event.key === "Enter") {
       event.preventDefault();
-      if (message == props.pokemon.name) {
-        prompt("Correct !");
-      }
 
-      // 👇️ access input value from state
-      console.log(message);
-
-      // 👇️ access input value from event object
+      // access input value from state
+      // console.log(message);
+      // access input value from event object
       // console.log(event.target.value)
-
       console.log("User pressed Enter ✅");
     }
   };
@@ -40,4 +34,11 @@ const PokemonIsValid = (props) => {
   );
 };
 
-export default PokemonIsValid;
+class Validation extends Component {
+  render() {
+    const { pokemon } = this.props;
+    return <PokemonIsValid name={pokemon.name} />;
+  }
+}
+
+export default Validation;
