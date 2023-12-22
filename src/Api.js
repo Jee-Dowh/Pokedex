@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Formulaire from "./Formulaire.js";
 import PhotoQuiz from "./Photo.js";
+import Correct from "./Reponse.js";
 
 class Api extends Component {
   state = {
@@ -17,7 +18,6 @@ class Api extends Component {
     pokemonSpecies: [],
     habitat: [],
     couleur: [],
-    photo: [],
   };
 
   componentDidMount() {
@@ -53,6 +53,7 @@ class Api extends Component {
         });
         this.getPokemon("habitat", result.habitat?.url, "");
         this.getPokemon("couleur", result.color?.url, "");
+        this.getPokemon("name", result.name, "");
       });
   }
 
@@ -77,6 +78,7 @@ class Api extends Component {
     const { couleur } = this.state;
     const { habitat } = this.state;
     const { photo } = this.state;
+    const { name } = this.state;
     return (
       <Formulaire
         tableDataContent={dataToPass}
@@ -84,6 +86,7 @@ class Api extends Component {
         couleur={couleur}
         habitat={habitat}
         photo={pokemon.sprites?.front_default}
+        name={name}
       />
 
       // (<PhotoQuiz photo={pokemon.sprites?.front_default} />)
